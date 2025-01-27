@@ -27,6 +27,10 @@ What's the version of `pip` in the image?
 
 ![Q1 Answer](images/q1.png)
 
+```bash
+Answer - 24.3.1
+```
+
 
 ## Question 2. Understanding Docker networking and docker-compose
 
@@ -35,33 +39,33 @@ Given the following `docker-compose.yaml`, what is the `hostname` and `port` tha
 ```yaml
 services:
   db:
-    container_name: postgres
-    image: postgres:17-alpine
-    environment:
-      POSTGRES_USER: 'postgres'
-      POSTGRES_PASSWORD: 'postgres'
-      POSTGRES_DB: 'ny_taxi'
-    ports:
-      - '5433:5432'
-    volumes:
-      - vol-pgdata:/var/lib/postgresql/data
+	container_name: postgres
+	image: postgres:17-alpine
+	environment:
+	  POSTGRES_USER: 'postgres'
+	  POSTGRES_PASSWORD: 'postgres'
+	  POSTGRES_DB: 'ny_taxi'
+	ports:
+	  - '5433:5432'
+	volumes:
+	  - vol-pgdata:/var/lib/postgresql/data
 
   pgadmin:
-    container_name: pgadmin
-    image: dpage/pgadmin4:latest
-    environment:
-      PGADMIN_DEFAULT_EMAIL: "pgadmin@pgadmin.com"
-      PGADMIN_DEFAULT_PASSWORD: "pgadmin"
-    ports:
-      - "8080:80"
-    volumes:
-      - vol-pgadmin_data:/var/lib/pgadmin  
+	container_name: pgadmin
+	image: dpage/pgadmin4:latest
+	environment:
+	  PGADMIN_DEFAULT_EMAIL: "pgadmin@pgadmin.com"
+	  PGADMIN_DEFAULT_PASSWORD: "pgadmin"
+	ports:
+	  - "8080:80"
+	volumes:
+	  - vol-pgadmin_data:/var/lib/pgadmin  
 
 volumes:
   vol-pgdata:
-    name: vol-pgdata
+	name: vol-pgdata
   vol-pgadmin_data:
-    name: vol-pgadmin_data
+	name: vol-pgadmin_data
 ```
 
 - postgres:5433
@@ -73,6 +77,10 @@ volumes:
 If there are more than one answers, select only one of them
 
 ![Q2 Answer](images/q2.png)
+
+```bash
+Answer - db:5432
+```
 
 ##  Prepare Postgres
 
@@ -184,8 +192,7 @@ where
 ```
 
 ```bash
-Answer
-104,802; 198,924; 109,603; 27,678; 35,189
+Answer - 104,802; 198,924; 109,603; 27,678; 35,189
 ```
 
 
@@ -214,8 +221,7 @@ limit 1;
 ```
 
 ```bash
-Answer
-2019-10-31
+Answer - 2019-10-31
 ```
 
 ## Question 5. Three biggest pickup zones
@@ -248,8 +254,7 @@ limit 3;
 ```
 
 ```bash
-Answer
-East Harlem North, East Harlem South, Morningside Heights
+Answer - East Harlem North, East Harlem South, Morningside Heights
 ```
 
 ## Question 6. Largest tip
@@ -287,8 +292,7 @@ order by 2 desc
 limit 1;
 ```
 ```bash
-Answer
-JFK Airport
+Answer - JFK Airport
 ```
 
 ## Terraform
@@ -317,8 +321,7 @@ Answers:
 - terraform import, terraform apply -y, terraform rm
 
 ```bash
-Answer
-terraform init, terraform apply -auto-approve, terraform destroy
+Answer - terraform init, terraform apply -auto-approve, terraform destroy
 ```
 
 ## Submitting the solutions
